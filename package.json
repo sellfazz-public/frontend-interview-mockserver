@@ -1,0 +1,30 @@
+{
+  "name": "sellfazz-candidate-fe-server",
+  "version": "1.0.0",
+  "description": "\"Interview test for frontend engineer\"",
+  "license": "MIT",
+  "main": "./index.ts",
+  "scripts": {
+    "test": "jest src/",
+    "redep": "yarn add sellfazz-ts-common && yarn add sellfazz-ts-utils && yarn add sellfazz-ts-api-redux",
+    "go": "clear; ts-node ./index",
+    "push": "git add .; git commit -m 'new'; git push;"
+  },
+  "author": "",
+  "dependencies": {
+    "@types/express": "^4.16.1",
+    "@types/jsonwebtoken": "^8.3.2",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.9.1",
+    "ts-node": "^8.0.3"
+  },
+  "devDependencies": {
+    "dom": "^0.0.3",
+    "es2017": "^0.0.0",
+    "es6": "^0.0.7",
+    "es7": "^1.0.1",
+    "typescript": "^3.4.1"
+  }
+}
