@@ -48,17 +48,17 @@ export class ProductRouterExtender implements RouterExtender {
           ...savedProduct,
           ...product
         } as Product
-        let updatedProduct = productStorage.set(id, toBeUpdatedProduct)
-        res.json(updatedProduct);
+        product.id = id
+        productStorage.set(id, toBeUpdatedProduct)
+        res.json(toBeUpdatedProduct);
       })
       .delete((req: Request, res: Response, next: NextFunction) => {
         let user = req["user"]
         let productStorage = runningStorage.productPerOwnerStorage.getOrEnsureByUserId(user.id)
         let id = req.param["id"]
+        let product = productStorage.get(id)
         productStorage.clear(id)
-        res.json({
-          
-        });
+        res.json(product);
       });
   }
 }
